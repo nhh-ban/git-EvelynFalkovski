@@ -45,6 +45,15 @@ colnames(table) <- variable_names[2:13]
 # under-represented in the sample. Can you make a plot that reveals this 
 # tendency and a likely explanation?
 
+# making a histogram of liner diameter
 hist(table$a_26)
 
+# making a scatterplot of linear diameter & logarithm of the hydrogen mass
+table %>% 
+  ggplot(aes(x=a_26, y=log_mhi)) + geom_point()
+
+# It seems like small objects are underrepresented. This can be seen in the 
+# scatterplot of the diameter (a_26) and logarithm of the hydrogen mass (log_mhi).
+# The plot shows a big empty spot for small diameter objects and medium
+# logarithm of the hydrogen mass. Potentially these objects are difficult to observe.
 
